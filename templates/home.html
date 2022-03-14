@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title%} Home Page {% endblock %}
+
+{% block content %}
+    <div class="game">
+        <h1>Welcome to Boggle.</h1>
+        <h2 class="high-score">Current High Score: {{highscore}}</h2>
+        <h2 class="game-counter">Number of Games Played: {{gameCount}}</h2>
+        <div class="rules">
+            <h4>Game Rules:</h4>
+            <ul>
+                <li>Set your timer in seconds to submit as many words as you can find.</li>
+                <li>Points are based on the length of each guess.</li>
+                <li>Each word should be of at least two letters.</li>
+                <li>You cannot repeat any words.</li>
+                <li>You can use both singular and plural forms of the same word.</li>
+            </ul>
+        </div>
+        <h3>Shall we begin?</h3>
+        <a href="/board"><button class="btn">START</button></a>
+    </div>
+
+    {% endblock %}

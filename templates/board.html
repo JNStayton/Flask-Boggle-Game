@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title%} Boggle Game {% endblock %}
+
+{% block content %}
+    <div class="game">
+        <h3 class="game-counter"></h3>
+        <h3 class="high-score"></h3>
+
+        <a href="/board"><button class="btn">PLAY AGAIN</button></a>
+        <a href="/"><button class="btn">HOME PAGE</button></a>
+
+        <h3 class="timer">Time Left: 60</h3>
+
+        <table class = "board">
+            {% for idx in board %}
+            <tr>
+                {% for i in idx %}
+                    <td>{{i}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    
+        <form action="/check_word" method="POST">
+            <input type="text" name="guess" class="guess">
+            <button id="guessBtn" class="btn">SUBMIT</button>
+        </form>
+
+        <p id="message"></p> 
+    </div>
+
+{% endblock %}
